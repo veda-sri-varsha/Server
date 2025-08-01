@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
 //    console.log("Request received");
 fs.appendFile('log.txt', `Request received at ${new Date()} (${req.url})\n`, (err) => {
     //     if (err) throw err;
-    //     console.log('Log updated');
+        console.log('Log updated');
     // });
     //    res.end('Hello World\n');
     switch (req.url) {
