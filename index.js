@@ -6,10 +6,25 @@ const server = http.createServer((req, res) => {
 //  console.log(req.headers);
 //    console.log("Request received");
 fs.appendFile('log.txt', `Request received at ${new Date()} (${req.url})\n`, (err) => {
-    if (err) throw err;
-    console.log('Log updated');
-});
-   res.end('Hello World\n');
+    //     if (err) throw err;
+    //     console.log('Log updated');
+    // });
+    //    res.end('Hello World\n');
+    switch (req.url) {
+        case '/':
+            res.end('Welcome to the Home Page\n');
+            break;
+        case '/about':
+            res.end('This is the About Page\n');
+            break;
+        case '/contact':
+            res.end('This is the Contact Page\n');
+            break;
+        default:
+            res.end('Page not found\n');
+            break;
+    }
+    });
 });
 
 server.listen(7000, () => {
