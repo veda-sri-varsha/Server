@@ -1,6 +1,6 @@
-const http = require('http');
-const fs = require('fs');
-const { URL } = require('url'); 
+const http = require('http'); // HTTP module
+const fs = require('fs'); // File System
+const { URL } = require('url'); //Uniform Resource Locator
 
 const server = http.createServer((req, res) => {
     // Ignore favicon
